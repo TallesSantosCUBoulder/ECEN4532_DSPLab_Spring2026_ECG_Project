@@ -1,16 +1,19 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Osciloscope Mode - Talles Santos 4/17/23
-% Rotine that read serial port data and plot time series and fft
+
+% ECEN4532 - DSP Lab (Module 02)
+% Osciloscope Mode - Talles Santos 2/19/26
+% Rotine that read serial port data and plot in real time
+
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 close all ; clear all ; clc
 
 % define port
 portName = serialportlist("available");
 portName = '/dev/ttyACM0' ;
+%portName = '/dev/ttyACM1' ;
 
 % open port
-fp = fopen( portName , 'r' );
-
+fp = serialport(portName,115200)
 
 % settings
 fs = 1 / (3e-3) ;                % sampling frequency of the arduino
@@ -25,38 +28,20 @@ vecSamples = 0 ;
 count=1;
 
 
-
-
-
 %%
 figure
 while(true)
 
     % find the first '\n' to know where to start to read
-    while(vecSamples~=10) % \n is 10 in ascii
-        if(feof(fp)==0)
-            vecSamples = fread( fp , 1 , "uint8" ) ;
-        else
-            fseek(fp,0,'cof'); % if find 'eof', keep reading
-        end
+    while(vecSamples~=10)
+        vecSamples = read( fp , 1 , "uint8" ) ;
     end
 
-    % tic
-    if(feof(fp)==0)  % if it is not the end of the file
-        [vecSamples,nbytes] = fread( fp , 5*sizeBufferArduino , "uint8" ); % try to read 5, because each number is "XXXX\n"
-    else
-        fseek(fp,0,'cof'); % if find 'eof', keep reading
-    end
-
-    % when the is no data available, continue up to have it ready
-    if( nbytes<5*sizeBufferArduino)
-        fseek(fp,-nbytes,"cof");
-        disp('no available data')
-        continue;
-    end
+    % read serial port
+    vecSamples = read( fp , 5*sizeBufferArduino , "uint8" ); % try to read 5, because each number is "XXXX\n"
 
     % take the serial port data and convert to a vector
-    vec_samples_aux = str2num(char(vecSamples'));
+    vec_samples_aux = str2num(char(vecSamples));
     vecSamples = vecSamples(end); % if it is \n, it keeps reading, if not will go to the first while of this loop
 
 
@@ -73,7 +58,9 @@ while(true)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % plot osciloscope
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     t = linspace(0,1/fs*nSamplesBuffer,nSamplesBuffer);
     freq_axis = linspace(0,fs,nSamplesBuffer);
@@ -98,10 +85,7 @@ while(true)
     hold off;
     title('osciloscope');
 
-    
-
     drawnow
-    pause(0.04)
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

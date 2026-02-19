@@ -4,7 +4,7 @@ unsigned long adcDelay = 3000; // delay 3000us or 3ms *(sampling rate fs)
 int adcCounter = 0;            // counting buffer index
 int count_aux = 0;             // debug var.
 
-const int BuffSize = 20;       // size buffer
+const int BuffSize = 1;       // size buffer
 int BufferVec[BuffSize] = {0}; // buffer
 
 char str_aux[6];                // each number is defined as a string "XXXX\n", where X is a digit [0:9]
