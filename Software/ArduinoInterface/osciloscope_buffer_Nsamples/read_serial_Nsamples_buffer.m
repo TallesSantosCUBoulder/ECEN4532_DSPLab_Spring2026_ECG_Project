@@ -9,8 +9,9 @@ close all ; clear all ; clc
 
 % define port
 portName = serialportlist("available");
-portName = '/dev/ttyACM0' ;
+% portName = '/dev/ttyACM0' ;
 %portName = '/dev/ttyACM1' ;
+portName = '/dev/ttyUSB0' ;
 
 % open port
 fp = serialport(portName,115200)
