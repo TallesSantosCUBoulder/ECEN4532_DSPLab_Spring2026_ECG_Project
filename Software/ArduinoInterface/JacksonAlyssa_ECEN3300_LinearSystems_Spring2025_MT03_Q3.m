@@ -7,8 +7,8 @@ Alyssa Jackson
 close all; clear all; clc;
 
 %% load signal
-ECG_signal = load('ECG_Signal_Q3.mat') ;
-x = ECG_signal.ECG_signal ;
+ECG_signal = load('100m.mat') ;
+x = ECG_signal.val ;
 Fs = ECG_signal.Fs ;
 
 % Removing the DC Offset from the Signal
