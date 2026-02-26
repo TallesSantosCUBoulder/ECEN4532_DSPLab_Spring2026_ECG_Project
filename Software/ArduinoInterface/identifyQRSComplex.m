@@ -1,3 +1,5 @@
+% For the best and most accurate data, the inputted signal need to be 
+% filtered first
 function [R_loc, left, right, bpm]=identifyQRSComplex(signal,Fs)
 %% Preprocessing the signal for QRS detection
 x = signal;
@@ -29,6 +31,8 @@ poss_reg =(x>thresh*max_h)';
 left = find(diff([0 poss_reg'])==1);
 right = find(diff([poss_reg' 0])==-1);
 
+% The R_loc variable is the location of the R values that make up a QRS
+% Complex
 for i=1:length(left)
     [R_value(i) R_loc(i)] = max(x(left(i):right(i)));
     R_loc(i) = R_loc(i)-1+left(i); % add offset

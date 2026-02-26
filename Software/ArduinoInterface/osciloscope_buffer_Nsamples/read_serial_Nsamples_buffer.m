@@ -29,7 +29,7 @@ vecSamples = 0 ;
 count=1;
 
 
-%%
+%% 
 figure
 while(true)
 

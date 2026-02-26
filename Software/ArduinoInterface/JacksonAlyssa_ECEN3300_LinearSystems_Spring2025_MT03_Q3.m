@@ -7,7 +7,7 @@ Alyssa Jackson
 close all; clear all; clc;
 
 %% load signal
-ECG_signal = load('100m.mat') ;
+ECG_signal = load('./100m.mat') ;
 x = ECG_signal.val ;
 Fs = ECG_signal.Fs ;
 
