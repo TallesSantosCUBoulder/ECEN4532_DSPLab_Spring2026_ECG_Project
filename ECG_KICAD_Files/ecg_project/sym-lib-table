@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "2026-02-26_19-36-44")(type "KiCad")(uri "${KIPRJMOD}/resources/ul_LF412ACN-NOPB/KiCADv6/2026-02-26_19-36-44.kicad_sym")(options "")(descr ""))
+  (lib (name "2026-02-26_19-47-40")(type "KiCad")(uri "${KIPRJMOD}/resources/ul_LF412ACN-NOPB/KiCADv6-1/2026-02-26_19-47-40.kicad_sym")(options "")(descr ""))
+  (lib (name "2026-02-26_19-53-16")(type "KiCad")(uri "${KIPRJMOD}/resources/ul_LF412ACN-NOPB(2)/KiCADv6/2026-02-26_19-53-16.kicad_sym")(options "")(descr ""))
+)
