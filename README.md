@@ -8,4 +8,8 @@
 
 ## Software
 
+## Connecting Hardware to Software
+
+## Results
+
 ## Conclusion
