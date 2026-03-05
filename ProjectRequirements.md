@@ -2,6 +2,7 @@
 **ECEN4532: Digital Signal Processing Laboratory (Spring 2026)**
 **Instructor:** Talles Santos
 
+
 ## Introduction
 
 This repository documents the design, implementation, and validation of a functional **Electrocardiogram (ECG) system** developed as part of ECEN4532 – Digital Signal Processing Laboratory.
