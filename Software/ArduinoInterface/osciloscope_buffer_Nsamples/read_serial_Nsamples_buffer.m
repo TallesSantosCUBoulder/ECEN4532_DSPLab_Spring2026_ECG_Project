@@ -9,9 +9,9 @@ close all ; clear all ; clc
 
 % define port
 portName = serialportlist("available");
-% portName = '/dev/ttyACM0' ;
+portName = '/dev/ttyACM0' ;
 %portName = '/dev/ttyACM1' ;
-portName = '/dev/ttyUSB0' ;
+% portName = '/dev/ttyUSB0' ;
 
 % open port
 fp = serialport(portName,115200)
@@ -50,6 +50,9 @@ while(true)
     for i=1:sizeBufferArduino
         CircularBuffer(count) = vec_samples_aux(i)*bits2volts ;
         count=mod(count,nSamplesBuffer)+1;
+        % idx = mod(count-1, numel(CircularBuffer)) + 1;
+        % CircularBuffer(idx) = vec_samples_aux(i)*bits2volts;
+
     end
 
     % toc
@@ -58,7 +61,7 @@ while(true)
     % your function
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Calling the Function
-    % [R_loc, left, right, bpm] = identifyQRSComplex(x, Fs);
+    [R_loc, left, right, bpm] = identifyQRSComplex(CircularBuffer, fs);
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,13 +83,14 @@ while(true)
     count_aux = mod(count-2,nSamplesBuffer)+1;
     plot(t(count_aux),CircularBuffer(count_aux),'r.')
     plot([t(count_aux) t(count_aux)],[-0.2 5.5],'r');
+    % plot(t, R_loc)
 
     xlim([0 t_Buffer]);
     ylim([-0.2 5.5])
     xlabel('t(secs)');
     ylabel('V(volts)')
     hold off;
-    title('osciloscope');
+    title('osciloscope; BPM: ', num2str(bpm));
 
     drawnow
 
