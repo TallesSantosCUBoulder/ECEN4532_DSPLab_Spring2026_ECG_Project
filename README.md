@@ -1,9 +1,9 @@
 # Module 02 – ECG Project
-**ECEN4532: Digital Signal Processing Laboratory (Spring 2026)**
-**Instructor:** Talles Santos
-**Students:** Alyssa Jackson
-Joshua Thomas
-Emilie Teel
+**ECEN4532: Digital Signal Processing Laboratory (Spring 2026)**  
+**Instructor:** Talles Santos  
+**Students:** Alyssa Jackson  
+Joshua Thomas  
+Emilie Teel  
 
 ## Introduction
 
