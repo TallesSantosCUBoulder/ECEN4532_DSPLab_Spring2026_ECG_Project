@@ -10,6 +10,7 @@
 
 
   ![Diagram of the Different Parts of a Heartbeat](ReportImages/PartsOfAHeartbeat.png)
+  *Figure 1: A Diagram of the different parts of a heartbeat that are searched for during an ECG test [2].*
 
   1. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
 
