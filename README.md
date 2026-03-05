@@ -11,15 +11,15 @@
 
   https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
 
-  
+
 
 ## Methodology
 
-# Hardware
+### Hardware
 
-# Software
+### Software
 
-# Connecting Hardware to Software
+### Connecting Hardware to Software
 
 ## Results
 
