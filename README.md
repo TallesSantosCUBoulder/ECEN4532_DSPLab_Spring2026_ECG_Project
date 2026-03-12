@@ -143,7 +143,7 @@ end
 
 Testing the 
 
-![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)
+![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)  
 *Figure ?: a*
 
 ### Connecting the Hardware and Software
