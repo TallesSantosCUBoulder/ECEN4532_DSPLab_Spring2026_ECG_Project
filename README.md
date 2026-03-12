@@ -67,9 +67,84 @@ count=1;
 That packet of 20 individual values from the Arduino is sent to a loop that can't be left without a Serial port disconnection or a manual code end caused by the user. That loop constantly looks for the start of the new incoming packet, packet into a vector that MATLAB can tranversed, enters that vector being evaluated, turns the value into a voltage thanks to the data conversion with a time attached to the value, and finally plotted on a constantly updating graph of voltage vs. time. A circular buffer is used so that a constant stream of voltages can be plotted in an ever-rotating plot that can be seen in Figure ? below.
 
 ![Gif that shows the Circular Plotting](ReportImages/RealTimePlotting.gif)
-*Figure ?: A gif that shows how the plotting of data works on MATLAB.*
+*Figure ?: A gif that shows how the plotting of data works on MATLAB. The red vertical line acts as the real-time sweep as the signal gets plotted.*  
+
+As can also be seen from Figure ?, there are also magneta dots and red and green stars on the signal as well. These are the marks that are meant to point to the what the R peak of a signal is as well as the right(green) and left(red) of that R peak, as explained below:
+
+```matlab
+% For the best and most accurate data, the inputted signal need to be 
+% filtered first
+function [R_loc, left, right, bpm]=identifyQRSComplex(signal,Fs)
+
+
+R_loc = [];
+left = [];
+right = [];
+bpm = NaN;
+%% Preprocessing the signal for QRS detection
+x = signal;
+
+% Removing the DC Offset from the Signal
+x = x - mean(x);
+
+% Finding the Time Scale of the Signal
+T = 1/Fs;
+N = length(x);
+
+t = (0:N-1)*T;
+
+% Normalizing the Signal
+Norm_signal = x.^2;
+Norm_signal = Norm_signal / max(abs(Norm_signal));
+
+
+% Finding the QRS Complex Peaks
+h = ones (1,36)/36; % 0.1secs
+% Apply filter
+x = conv (Norm_signal ,h,'same');
+x = x/max(abs(x));
+
+max_h = max(x);
+thresh = 2*mean(x);
+poss_reg =(x>thresh*max_h)';
+
+% left = find(diff([0 poss_reg'])==1);
+% right = find(diff([poss_reg' 0])==-1);
+
+if isempty(poss_reg)
+      left = [];
+      right = [];
+    else
+      left = find(diff([0, poss_reg(:)']) == 1);
+      right = find(diff([poss_reg(:)' 0]) == -1);
+end
+
+
+% The R_loc variable is the location of the R values that make up a QRS
+% Complex
+for i=1:length(left)
+    [R_value(i) R_loc(i)] = max(x(left(i):right(i)));
+    R_loc(i) = R_loc(i)-1+left(i); % add offset
+end
+
+freq_heartbeat = length(left)/max(t);
+
+% Convert frequency to beats per minute
+bpm = freq_heartbeat * 60;
+
+end
+```
+*Code Snipet 2: The 'identifyQRSComplex' function used in the MATLAB code to find the bpm, the R location from the QRS complex, and the left and right of the the R location.*
+
+
+
 
 ### Testing the Software
+
+Testing the 
+
+![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)
+*Figure ?: a*
 
 ### Connecting the Hardware and Software
 
