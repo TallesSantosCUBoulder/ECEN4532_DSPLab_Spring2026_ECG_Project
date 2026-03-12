@@ -33,9 +33,34 @@
 ### Hardware
 
 ### Software
-For the software side of things, an Arduino Uno R3 was used to take that normalized heartbeat signal, or a simple test square wave generated from a function generator, that ranges from 0 to 5V and transmit the data to MATLAB via packets. The packets act like individual bundles of data that are all sent to the host computer running MATLAB in order instead of in a constant real time stream that would take more processing power and lead to potential data errors.
+For the software side of things, an Arduino Uno R3 was used to take that normalized heartbeat signal, or a simple test square wave generated from a function generator, that ranges from 0 to 5V and transmit the data to MATLAB via packets. The packets act like individual bundles of data that are all sent to the host computer running MATLAB in order instead of in a constant real time stream that would take more processing power and lead to potential data errors.  
 
-  That packet of 
+But before the data is sent over, the MATLAB script must be formatted to fit the 
+```matlab
+% define port
+portName = serialportlist("available");
+% portName = '/dev/ttyACM0' ;
+% portName = '/dev/ttyACM1' ;
+portName = '/dev/ttyUSB0' ;
+
+% open port
+fp = serialport(portName,115200);
+
+% settings
+fs = 1 / (3e-3) ;                % sampling frequency of the arduino
+sizeBufferArduino = 20 ;         % from arduino code
+t_Buffer = 10.0 ;                   % in seconds
+nSamplesBuffer = round(t_Buffer*fs) ;   % nSamples of the circular buffer in the matlab script
+bits2volts = 5/(2^10-1) ;            % convertion from bits to volts (arduino uno 10 bits)
+
+% initialing variables
+CircularBuffer = zeros(nSamplesBuffer,1);
+vecSamples = 0 ;
+count=1;
+
+```  
+
+That packet of 20 individual, normalized voltage values from the Arduino are then sent over to MATLAB using the Serial connection port
 
 ### Connecting Hardware to Software
 
