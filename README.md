@@ -32,6 +32,8 @@
 
 ### Hardware
 
+### Testing the Hardware
+
 ### Software
 For the software side of things, an Arduino Uno R3 was used to take that normalized heartbeat signal, or a simple test square wave generated from a function generator, that ranges from 0 to 5V and transmit the data to MATLAB via packets. The packets act like individual bundles of data that are all sent to the host computer running MATLAB in order instead of in a constant real time stream that would take more processing power and lead to potential data errors.  
 
@@ -62,9 +64,14 @@ count=1;
 ``` 
 *Code Snipet 1: The first lines from the MATLAB script 'read_serial_Nsamples_buffer.m'. These lines work to format everything from the baud rate being received, the sampling frequency that the signal is being measured at, the size of the data packets that are recieved at once, conversion of the Arduino value from 0 to 5 volts, and other variables needed in the plotting of the data in real-time.* 
 
-That packet of 20 individual values from the Arduino is sent to a loop that can't be left without a Serial port disconnection or a manual code end caused by the user. That loop constantly looks for the start of the new incoming packet, packet into a vector that MATLAB can tranversed, enters that vector being evaluated, turns the value into a voltage thanks to the data conversion with a time attached to the value, and finally plotted on a constantly updating graph of voltage vs. time. 
+That packet of 20 individual values from the Arduino is sent to a loop that can't be left without a Serial port disconnection or a manual code end caused by the user. That loop constantly looks for the start of the new incoming packet, packet into a vector that MATLAB can tranversed, enters that vector being evaluated, turns the value into a voltage thanks to the data conversion with a time attached to the value, and finally plotted on a constantly updating graph of voltage vs. time. A circular buffer is used so that a constant stream of voltages can be plotted in an ever-rotating plot that can be seen in Figure ? below.
 
-### Connecting Hardware to Software
+![Gif that shows the Circular Plotting](ReportImages/RealTimePlotting.gif)
+*Figure ?: A gif that shows how the plotting of data works on MATLAB.*
+
+### Testing the Software
+
+### Connecting the Hardware and Software
 
 ## Results
 
