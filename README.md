@@ -1,7 +1,7 @@
 # Module 02 – ECG Project
 **ECEN4532: Digital Signal Processing Laboratory (Spring 2026)**  
 **Instructor:** Talles Santos  
-**Students:** Alyssa Jackson  
+**Students:**   Alyssa Jackson  
               Joshua Thomas  
               Emilie Teel  
 
@@ -12,7 +12,7 @@
   *Figure 1: A diagram of the circuit that a body completes based on the position of the electrodes. A) represents the circuit on a body while B) shows the connections in the image space. [4]*
 
 
-
+  
 
 
   ![Diagram of the Different Parts of a Heartbeat](ReportImages/PartsOfAHeartbeat.png)
@@ -33,6 +33,9 @@
 ### Hardware
 
 ### Software
+For the software side of things, an Arduino Uno R3 was used to take that normalized heartbeat signal, or a simple test square wave generated from a function generator, that ranges from 0 to 5V and transmit the data to MATLAB via packets. The packets act like individual bundles of data that are all sent to the host computer running MATLAB in order instead of in a constant real time stream that would take more processing power and lead to potential data errors.
+
+  That packet of 
 
 ### Connecting Hardware to Software
 
