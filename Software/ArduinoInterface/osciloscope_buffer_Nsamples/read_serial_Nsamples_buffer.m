@@ -9,12 +9,12 @@ close all ; clear all ; clc
 
 % define port
 portName = serialportlist("available");
-portName = '/dev/ttyACM0' ;
-%portName = '/dev/ttyACM1' ;
-% portName = '/dev/ttyUSB0' ;
+% portName = '/dev/ttyACM0' ;
+% portName = '/dev/ttyACM1' ;
+portName = '/dev/ttyUSB0' ;
 
 % open port
-fp = serialport(portName,115200)
+fp = serialport(portName,115200);
 
 % settings
 fs = 1 / (3e-3) ;                % sampling frequency of the arduino
@@ -83,8 +83,13 @@ while(true)
     count_aux = mod(count-2,nSamplesBuffer)+1;
     plot(t(count_aux),CircularBuffer(count_aux),'r.')
     plot([t(count_aux) t(count_aux)],[-0.2 5.5],'r');
-    % plot(t, R_loc)
 
+    % Plotting the left, right, and QRS peak of the signal
+    plot(t(R_loc),CircularBuffer(R_loc),'m*','LineWidth',5)
+    plot(t(left), CircularBuffer(left), 'r*')
+    plot(t(right), CircularBuffer(right), 'g*')
+
+    % Handling the Size and specifics of the real time plotting
     xlim([0 t_Buffer]);
     ylim([-0.2 5.5])
     xlabel('t(secs)');

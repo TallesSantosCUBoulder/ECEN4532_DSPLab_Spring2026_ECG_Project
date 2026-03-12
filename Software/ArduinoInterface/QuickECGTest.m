@@ -23,7 +23,7 @@ Norm_signal = Norm_signal / max(abs(Norm_signal));
 freq_heartbeat = length(left)/max(t);
 
 
-figure("Name","Part 5"); hold on;
+figure(); hold on;
 plot(t,x,'b')
 plot(t(R_loc),x(R_loc),'m*','LineWidth',5)
 plot(t(left), x(left), 'r*')
