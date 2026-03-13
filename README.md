@@ -134,17 +134,22 @@ bpm = freq_heartbeat * 60;
 
 end
 ```
-*Code Snipet 2: The 'identifyQRSComplex' function used in the MATLAB code to find the bpm, the R location from the QRS complex, and the left and right of the the R location.*
+*Code Snipet 2: The 'identifyQRSComplex' function used in the MATLAB code to find the bpm, the R location from the QRS complex, and the left and right of the the R location.*  
 
-
+The code from the above snipet is the entireity of the function, and it also has the added benefit of being able to calculate the bpm (or the frequency of a signal in the span of a minute) of the input signal, which is displayed at the top of the gif in Figure ?. When combined, the function from Code Snipet 2 and the MATLAB script, the entirity of the code can detect the peaks of a signal, mark its highest point, the immediate left and right of that peak, and the bpm (or the frequency per minute for non-heartbeat signals) of the signal that is detected through the Arduino Uno.
 
 
 ### Testing the Software
 
-Testing the 
+Testing the programming for both the Arduino and
 
 ![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)  
-*Figure ?: a*
+*Figure ?: The settings used for the test signal input in the Arduino.*
+
+
+
+![BPM of the Test Signal](ReportImages/BPMImage.png)  
+*Figure ?: The image from the MATLAB srcipt running that shows the bpm of the signal, which is around 90 times a second for a minute, or around 1.5Hz.*
 
 ### Connecting the Hardware and Software
 
