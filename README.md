@@ -179,9 +179,8 @@ The main issues that were had with the ECG circuit as a whole was the slow speed
 [2]    “How does an ECG work? Understanding ECG and heart health,” Withings.com, 2026. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy (accessed Mar. 22, 2026).
 ‌
 
-3. https://www.researchgate.net/figure/A-The-circuit-of-the-Goldberger-augmented-leads-B-The-location-of-the-Goldberger_fig4_321019966
+[3]    Jaakko Malmivuo and R. Plonsey, Bioelectromagnetism : Principles and Applications of Bioelectric and Biomagnetic Fields. New York Oxford University Press -10-05, 1995.
+‌
 
 [4]    “Abnormal Electrocardiogram (ECG/EKG) - Doral Health & Wellness NY,” Doral Health & Wellness, Aug. 08, 2025. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/ (accessed Mar. 22, 2026).
 ‌
-
-5. 
