@@ -18,13 +18,7 @@
   ![Diagram of the Different Parts of a Heartbeat](ReportImages/PartsOfAHeartbeat.png)
   *Figure 2: A diagram of the different parts of a heartbeat that are searched for during an ECG test [2].*
 
-  1. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
-
-  2. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy
-
-  3. https://www.researchgate.net/figure/A-The-circuit-of-the-Goldberger-augmented-leads-B-The-location-of-the-Goldberger_fig4_321019966
-
-  4. 
+  
 
 
 
@@ -156,3 +150,14 @@ Testing the programming for both the Arduino and
 ## Results
 
 ## Conclusion
+
+
+
+## References
+1. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
+
+2. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy
+
+3. https://www.researchgate.net/figure/A-The-circuit-of-the-Goldberger-augmented-leads-B-The-location-of-the-Goldberger_fig4_321019966
+
+4. 
