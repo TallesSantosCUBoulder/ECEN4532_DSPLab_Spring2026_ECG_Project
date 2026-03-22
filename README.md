@@ -1,7 +1,9 @@
 # Module 02 – ECG Project
 **ECEN4532: Digital Signal Processing Laboratory (Spring 2026)**  
 **Instructor:** Talles Santos  
-**Students:**   Alyssa Jackson, Joshua Thomas, and Emilie Teel  
+**Students:**   Alyssa Jackson  
+&emsp;&emsp;&emsp;&emsp;Joshua Thomas  
+&emsp;&emsp;&emsp;&emsp;Emilie Teel  
 
 ## Introduction
   An electrocardiogram (shortened to ECG or EKG) procedure is a quick and simple test that is designed to record the eletrical signal from a patient's beating heart and use it to find its natural rhythmic cycle [1]. By placing electrodes aroud the patient's chest, arms, and/or legs, a circuit is created with the heart as the voltage source the contractions caused by electricity are pickeed up by the electrodes and sent to a circuit.
@@ -176,11 +178,11 @@ The main issues that were had with the ECG circuit as a whole was the slow speed
 [1]&emsp;Mayo Clinic, “Electrocardiogram (ECG or EKG),” Mayoclinic.org, Apr. 02, 2024. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
 ‌
 
-[2]    “How does an ECG work? Understanding ECG and heart health,” Withings.com, 2026. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy (accessed Mar. 22, 2026).
+[2]&emsp;“How does an ECG work? Understanding ECG and heart health,” Withings.com, 2026. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy (accessed Mar. 22, 2026).
 ‌
 
-[3]    Jaakko Malmivuo and R. Plonsey, Bioelectromagnetism : Principles and Applications of Bioelectric and Biomagnetic Fields. New York Oxford University Press -10-05, 1995.
+[3]&emsp;Jaakko Malmivuo and R. Plonsey, Bioelectromagnetism : Principles and Applications of Bioelectric and Biomagnetic Fields. New York Oxford University Press -10-05, 1995.
 ‌
 
-[4]    “Abnormal Electrocardiogram (ECG/EKG) - Doral Health & Wellness NY,” Doral Health & Wellness, Aug. 08, 2025. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/ (accessed Mar. 22, 2026).
+[4]&emsp;“Abnormal Electrocardiogram (ECG/EKG) - Doral Health & Wellness NY,” Doral Health & Wellness, Aug. 08, 2025. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/ (accessed Mar. 22, 2026).
 ‌
