@@ -67,7 +67,7 @@ If the system is not fully functional, the maximum achievable score is 70%. In s
 
 ## Schedule and Deliverables
 
-- **Due Date:** March 12, 2026
+- **Due Date:** March 24, 2026
 - **Presentation:** 15 minutes
   - System overview
   - Hardware and software implementation

@@ -1,9 +1,7 @@
 # Module 02 – ECG Project
 **ECEN4532: Digital Signal Processing Laboratory (Spring 2026)**  
 **Instructor:** Talles Santos  
-**Students:**   Alyssa Jackson  
-              Joshua Thomas  
-              Emilie Teel  
+**Students:**   Alyssa Jackson, Joshua Thomas, and Emilie Teel  
 
 ## Introduction
   An electrocardiogram (shortened to ECG or EKG) procedure is a quick and simple test that is designed to record the eletrical signal from a patient's beating heart and use it to find its natural rhythmic cycle [1]. By placing electrodes aroud the patient's chest, arms, and/or legs, a circuit is created with the heart as the voltage source the contractions caused by electricity are pickeed up by the electrodes and sent to a circuit.
@@ -35,7 +33,8 @@ For the software side of things, an Arduino Uno R3 was used to take that normali
 But before the data is sent over, the MATLAB script must be formatted to in order to gather the data coming in from the Arduino at the correct speed and sampling frequency:  
 
 ```matlab
-% define port
+% define port; check whatever port the Arduino is connected to
+% and uncomment that one while commenting the other ports
 portName = serialportlist("available");
 % portName = '/dev/ttyACM0' ;
 % portName = '/dev/ttyACM1' ;
@@ -147,12 +146,14 @@ As shown with Figure 4, the signal from the Arduino in the different inputs to t
 
 
 ![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)  
-*Figure 5: The settings used for the test signal input in the Arduino.*
+*Figure 5: The settings used for the test signal input in the Arduino.*  
 
-
+Instead of just having a DC signal and moving it from 5V to GND very fast by hand, a function generator was used instead and set with the parameter as seen in Figure 5. The gif from Figure 3 is the real-time plotting of the signal generated using the information from Figure 5.
 
 ![BPM of the Test Signal](ReportImages/BPMImage.png)  
-*Figure 6: The image from the MATLAB srcipt running that shows the BPM of the signal, which is around 90 times a second for a minute, or around 1.5Hz.*
+*Figure 6: The image from the MATLAB srcipt running that shows the BPM of the signal, which is around 90 times a second for a minute, or around 1.5Hz.*  
+
+While the BPM can be seen in Figure 3, it is shown again ib Figure 6. The BPM can be seen as 90, or 1.5Hz, which lines up with how the function generator was set up to output. This shows that the BPM calculation, and the software side of the ECG circuit as a whole, is working as intended.
 
 ### Connecting the Hardware and Software
 
@@ -160,6 +161,10 @@ As shown with Figure 4, the signal from the Arduino in the different inputs to t
 
 ![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
 *Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times a second for a minute, or around 1Hz.*  
+
+Once the 
+
+The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that occasionally the MATLAB script not running with an ... error.
 
 ## Conclusion
 
