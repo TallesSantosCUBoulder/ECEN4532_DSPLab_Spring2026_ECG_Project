@@ -138,24 +138,26 @@ The code from the above snipet is the entireity of the function, and it also has
 
 Testing the programming for both the Arduino and MATLAB itself is pretty simple: connect the Arduino to PC running the MATLAB script and view the real-time output from the A0 pin.  
 
-Put the gif or image here.
+![Gif that shows the Circular Plotting with Test Signals](ReportImages/TestingArduinoAndMatlab.gif)
+*Figure 4: A gif that shows how the plotting of signals to MATLAB. The gif shows the signals from the A0 pin connected to the GND pin, the 5V pin, and just open to the air.*  
+
 
 To test the BPM calculation equation
 
 ![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)  
-*Figure 4: The settings used for the test signal input in the Arduino.*
+*Figure 5: The settings used for the test signal input in the Arduino.*
 
 
 
 ![BPM of the Test Signal](ReportImages/BPMImage.png)  
-*Figure 5: The image from the MATLAB srcipt running that shows the BPM of the signal, which is around 90 times a second for a minute, or around 1.5Hz.*
+*Figure 6: The image from the MATLAB srcipt running that shows the BPM of the signal, which is around 90 times a second for a minute, or around 1.5Hz.*
 
 ### Connecting the Hardware and Software
 
 ## Results
 
 ![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
-*Figure 6: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times a second for a minute, or around 1Hz.*  
+*Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times a second for a minute, or around 1Hz.*  
 
 ## Conclusion
 
