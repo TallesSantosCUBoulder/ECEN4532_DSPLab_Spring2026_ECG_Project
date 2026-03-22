@@ -162,7 +162,7 @@ While the BPM can be seen in Figure 3, it is shown again ib Figure 6. The BPM ca
 ## Results
 
 ![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
-*Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times a second for a minute, or around 1Hz.*  
+*Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times per minute, or around 1Hz.*  
 
 Once the circuit board was connected to the 
 
@@ -172,7 +172,13 @@ Once the circuit board was connected to the
 With the overall results of the completed hardware and software integration showing that the  
 
 
-The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that occasionally the MATLAB script not running with an ... error. The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The error, on the other hand
+The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that occasionally the MATLAB script not running with an ... error.  
+
+![The Error that will occasionally occur and make the MATLAB script not work](ReportImages/MatlabOccasionalError.png)  
+*Figure 8: The error th*  
+
+
+The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The error, on the other hand
 
 ## References
 [1]&emsp;Mayo Clinic, “Electrocardiogram (ECG or EKG),” Mayoclinic.org, Apr. 02, 2024. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
