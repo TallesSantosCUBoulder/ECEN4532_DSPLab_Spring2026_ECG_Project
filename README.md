@@ -138,11 +138,13 @@ The code from the above snipet is the entireity of the function, and it also has
 
 Testing the programming for both the Arduino and MATLAB itself is pretty simple: connect the Arduino to PC running the MATLAB script and view the real-time output from the A0 pin.  
 
+
 ![Gif that shows the Circular Plotting with Test Signals](ReportImages/TestingArduinoAndMatlab.gif)
 *Figure 4: A gif that shows how the plotting of signals to MATLAB. The gif shows the signals from the A0 pin connected to the GND pin, the 5V pin, and just open to the air.*  
 
 
-To test the BPM calculation equation
+As shown with Figure 4, the signal from the Arduino in the different inputs to the A0 pin. In this test, the BPM from the signal means nothing since the Arduino updating from the inputs was slow due to the packets method, so a different test would be needed to see how the BPM calculation would work.  
+
 
 ![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)  
 *Figure 5: The settings used for the test signal input in the Arduino.*
