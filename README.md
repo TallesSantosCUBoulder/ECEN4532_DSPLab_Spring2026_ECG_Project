@@ -6,7 +6,7 @@
 &emsp;&emsp;&emsp;&emsp;&emsp;Emilie Teel  
 
 ## Introduction
-  An electrocardiogram (shortened to ECG or EKG) procedure is a quick and simple test that is designed to record the eletrical signal from a patient's beating heart and use it to find its natural rhythmic cycle [1]. By placing electrodes aroud the patient's chest, arms, and/or legs, a circuit is created with the heart as the voltage source the contractions caused by electricity are pickeed up by the electrodes and sent to a circuit.
+  An electrocardiogram (often shortened to ECG or EKG) procedure is a quick and simple test that is designed to record the eletrical signal from a patient's beating heart and use it to find its natural rhythmic cycle [1]. By placing electrodes aroud the patient's chest, arms, and/or legs, a circuit is created with the heart as the voltage source the contractions caused by electricity are pickeed up by the electrodes and sent to a circuit.
 
 
   ![Diagram of the Different Parts of a Heartbeat](ReportImages/PartsOfAHeartbeat.png)
@@ -164,18 +164,18 @@ While the BPM can be seen in Figure 3, it is shown again ib Figure 6. The BPM ca
 ![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
 *Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times per minute, or around 1Hz.*  
 
-Once the circuit board was connected to the 
+Once the circuit board was connected to the Arduino or MATLAB, and the output from Figure 7 with the...  
 
 
 ## Conclusion and Future Work
 
-With the overall results of the completed hardware and software integration showing that the  
+With the overall results of the completed hardware and software integration showing that the...  
 
 
-The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that occasionally the MATLAB script not running with an ... error.  
+The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system, the fact that occasionally the MATLAB script not running with an "Index exceeds array bounds" error, as shown in Figure 8, and the .  
 
 ![The Error that will occasionally occur and make the MATLAB script not work](ReportImages/MatlabOccasionalError.png)  
-*Figure 8: The error th*  
+*Figure 8: The "Index exceeds array bounds" error that occasionally occurs when trying to run the MATLAB script.*  
 
 
 The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The error, on the other hand
