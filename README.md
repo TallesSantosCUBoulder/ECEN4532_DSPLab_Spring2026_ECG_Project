@@ -162,21 +162,26 @@ While the BPM can be seen in Figure 3, it is shown again ib Figure 6. The BPM ca
 ![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
 *Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times a second for a minute, or around 1Hz.*  
 
-Once the 
-
-The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that occasionally the MATLAB script not running with an ... error.
-
-## Conclusion
+Once the circuit board was connected to the 
 
 
+## Conclusion and Future Work
+
+With the overall results of the completed hardware and software integration showing that the  
+
+
+The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that occasionally the MATLAB script not running with an ... error. The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The error, on the other hand
 
 ## References
-1. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
+[1]    Mayo Clinic, “Electrocardiogram (ECG or EKG),” Mayoclinic.org, Apr. 02, 2024. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
+‌
 
-2. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy
+[2]    “How does an ECG work? Understanding ECG and heart health,” Withings.com, 2026. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy (accessed Mar. 22, 2026).
+‌
 
 3. https://www.researchgate.net/figure/A-The-circuit-of-the-Goldberger-augmented-leads-B-The-location-of-the-Goldberger_fig4_321019966
 
-4. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/
+[4]    “Abnormal Electrocardiogram (ECG/EKG) - Doral Health & Wellness NY,” Doral Health & Wellness, Aug. 08, 2025. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/ (accessed Mar. 22, 2026).
+‌
 
 5. 
