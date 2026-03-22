@@ -23,14 +23,14 @@
 ### Hardware
 
 ![Diagram of the Circuit the Body Completes](ReportImages/BodyCircuit.png)
-*Figure 2: A diagram of the circuit that a body completes based on the position of the electrodes. A) represents the circuit on a body while B) shows the connections in the image space. [4]*  
+*Figure 2: A diagram of the circuit that a body completes based on the position of the electrodes. A) represents the circuit on a body while B) shows the connections in the image space. [3]*  
 
 As can be seen in Figure 2, the basic premise of the ECG Circuit itself involves building a voltage divider with the heart in order to pick up the signals ans input it into the circuit.
 
 ### Testing the Hardware
 
 ### Software
-For the software side of things, an Arduino Uno R3 was used to take that normalized heartbeat signal, or a simple test square wave generated from a function generator, that ranges from 0 to 5V and transmit the data to MATLAB via packets. The packets act like individual bundles of data that are all sent to the host computer running MATLAB in order instead of in a constant real time stream that would take more processing power and lead to potential data errors.  
+For the software side of things, an Arduino Uno R3 was used to take that normalized heartbeat signal, or a simple test signal generated from a function generator, that ranges from 0 to 5V and transmit the data to MATLAB via packets. The packets act like individual bundles of data that are all sent to the host computer running MATLAB in order instead of in a constant real time stream that would take more processing power and lead to potential data errors.  
 
 But before the data is sent over, the MATLAB script must be formatted to in order to gather the data coming in from the Arduino at the correct speed and sampling frequency:  
 
@@ -62,9 +62,9 @@ count=1;
 That packet of 20 individual values from the Arduino is sent to a loop that can't be left without a Serial port disconnection or a manual code end caused by the user. That loop constantly looks for the start of the new incoming packet, packet into a vector that MATLAB can tranversed, enters that vector being evaluated, turns the value into a voltage thanks to the data conversion with a time attached to the value, and finally plotted on a constantly updating graph of voltage vs. time. A circular buffer is used so that a constant stream of voltages can be plotted in an ever-rotating plot that can be seen in Figure ? below.
 
 ![Gif that shows the Circular Plotting](ReportImages/RealTimePlotting.gif)
-*Figure ?: A gif that shows how the plotting of data works on MATLAB. The red vertical line acts as the real-time sweep as the signal gets plotted.*  
+*Figure 3: A gif that shows how the plotting of data works on MATLAB. The red vertical line acts as the real-time sweep as the signal gets plotted.*  
 
-As can also be seen from Figure ?, there are also magneta dots and red and green stars on the signal as well. These are the marks that are meant to point to the what the R peak of a signal is as well as the right(green) and left(red) of that R peak, as explained below:
+As can also be seen from Figure 3, there are also magneta dots and red and green stars on the signal as well. These are the marks that are meant to point to the what the R peak of a signal is as well as the right(green) and left(red) of that R peak, as explained below:
 
 ```matlab
 % For the best and most accurate data, the inputted signal need to be 
@@ -131,24 +131,31 @@ end
 ```
 *Code Snipet 2: The 'identifyQRSComplex' function used in the MATLAB code to find the bpm, the R location from the QRS complex, and the left and right of the the R location.*  
 
-The code from the above snipet is the entireity of the function, and it also has the added benefit of being able to calculate the bpm (or the frequency of a signal in the span of a minute) of the input signal, which is displayed at the top of the gif in Figure ?. When combined, the function from Code Snipet 2 and the MATLAB script, the entirity of the code can detect the peaks of a signal, mark its highest point, the immediate left and right of that peak, and the bpm (or the frequency per minute for non-heartbeat signals) of the signal that is detected through the Arduino Uno.
+The code from the above snipet is the entireity of the function, and it also has the added benefit of being able to calculate the bpm (or the frequency of a signal in the span of a minute) of the input signal, which is displayed at the top of the gif in Figure 3. When combined, the function from Code Snipet 2 and the MATLAB script, the entirity of the code can detect the peaks of a signal, mark its highest point, the immediate left and right of that peak, and the BPM (or the frequency per minute for non-heartbeat signals) of the signal that is detected through the Arduino Uno.
 
 
 ### Testing the Software
 
-Testing the programming for both the Arduino and
+Testing the programming for both the Arduino and MATLAB itself is pretty simple: connect the Arduino to PC running the MATLAB script and view the real-time output from the A0 pin.  
+
+Put the gif or image here.
+
+To test the BPM calculation equation
 
 ![The Settings used in the Generation of the Test Signal](ReportImages/TestSignalSettings.PNG)  
-*Figure ?: The settings used for the test signal input in the Arduino.*
+*Figure 4: The settings used for the test signal input in the Arduino.*
 
 
 
 ![BPM of the Test Signal](ReportImages/BPMImage.png)  
-*Figure ?: The image from the MATLAB srcipt running that shows the bpm of the signal, which is around 90 times a second for a minute, or around 1.5Hz.*
+*Figure 5: The image from the MATLAB srcipt running that shows the BPM of the signal, which is around 90 times a second for a minute, or around 1.5Hz.*
 
 ### Connecting the Hardware and Software
 
 ## Results
+
+![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
+*Figure 6: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times a second for a minute, or around 1Hz.*  
 
 ## Conclusion
 

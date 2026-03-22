@@ -7,7 +7,8 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 close all ; clear all ; clc
 
-% define port
+% define port; check whatever port the Arduino is connected to
+% and uncomment that one while commenting the other ports
 portName = serialportlist("available");
 % portName = '/dev/ttyACM0' ;
 % portName = '/dev/ttyACM1' ;
