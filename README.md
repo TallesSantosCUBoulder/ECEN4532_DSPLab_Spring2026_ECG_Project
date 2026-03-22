@@ -173,7 +173,7 @@ With the overall results of the completed hardware and software integration show
 The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that occasionally the MATLAB script not running with an ... error. The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The error, on the other hand
 
 ## References
-[1]    Mayo Clinic, “Electrocardiogram (ECG or EKG),” Mayoclinic.org, Apr. 02, 2024. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
+[1]&emsp;Mayo Clinic, “Electrocardiogram (ECG or EKG),” Mayoclinic.org, Apr. 02, 2024. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
 ‌
 
 [2]    “How does an ECG work? Understanding ECG and heart health,” Withings.com, 2026. https://www.withings.com/us/en/health-insights/about-ecg-ekg-electrocardiogram?srsltid=AfmBOorydm8yKYhquxItaWKUVDFjAmXBAV8dxPpUkZrdyCu7soVGj3wy (accessed Mar. 22, 2026).
