@@ -2,8 +2,8 @@
 **ECEN4532: Digital Signal Processing Laboratory (Spring 2026)**  
 **Instructor:** Talles Santos  
 **Students:**   Alyssa Jackson  
-&emsp;&emsp;&emsp;&emsp;Joshua Thomas  
-&emsp;&emsp;&emsp;&emsp;Emilie Teel  
+&emsp;&emsp;&emsp;&emsp;&emsp;Joshua Thomas  
+&emsp;&emsp;&emsp;&emsp;&emsp;Emilie Teel  
 
 ## Introduction
   An electrocardiogram (shortened to ECG or EKG) procedure is a quick and simple test that is designed to record the eletrical signal from a patient's beating heart and use it to find its natural rhythmic cycle [1]. By placing electrodes aroud the patient's chest, arms, and/or legs, a circuit is created with the heart as the voltage source the contractions caused by electricity are pickeed up by the electrodes and sent to a circuit.
