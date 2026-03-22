@@ -6,13 +6,13 @@
               Emilie Teel  
 
 ## Introduction
-  An electrocardiogram (shortened to ECG or EKG) procedure is a quick and simple test that is designed to record the eletrical signal from a patient's beating heart and use it to find its natural rhythmic cycle[1]. By placing electrodes aroud the patient's chest, arms, and/or legs, a circuit is created with the heart as the voltage source the contractions caused by electricity are pickeed up by the electrodes and sent to a circuit.
+  An electrocardiogram (shortened to ECG or EKG) procedure is a quick and simple test that is designed to record the eletrical signal from a patient's beating heart and use it to find its natural rhythmic cycle [1]. By placing electrodes aroud the patient's chest, arms, and/or legs, a circuit is created with the heart as the voltage source the contractions caused by electricity are pickeed up by the electrodes and sent to a circuit.
 
 
   ![Diagram of the Different Parts of a Heartbeat](ReportImages/PartsOfAHeartbeat.png)
   *Figure 1: A diagram of the different parts of a heartbeat that are searched for during an ECG test [2].*
 
-  This signal of the heartbeat, in the form of the "PQRST" complex as seen with Figure 1, is what needs to be detected in order to find...  
+  This signal of the heartbeat, in the form of the "PQRST" complex as seen with Figure 1, is what needs to be detected in order to find important information about a patient's heart. Things like poor blood flow, arrhythmias, heart attacks, and thickened heart walls, can be picked up, seen, and diagnosed accurately with this type of circuit [4].  
 
   The goal of this project is not only to build an analog circuit that can pick up the signals of a heartbeat, but to then transmit that data using an Arduino Uno to MATLAB that will then visual said data from the heart and calculate the BPM (or the beats per minute) from the received signal.
 
@@ -161,4 +161,6 @@ Testing the programming for both the Arduino and
 
 3. https://www.researchgate.net/figure/A-The-circuit-of-the-Goldberger-augmented-leads-B-The-location-of-the-Goldberger_fig4_321019966
 
-4. 
+4. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/
+
+5. 
