@@ -10,7 +10,7 @@
 
 
   ![Diagram of the Different Parts of a Heartbeat](ReportImages/PartsOfAHeartbeat.png)
-  *Figure 1: A diagram of the different parts of a heartbeat that are searched for during an ECG test [2].*
+  *Figure 1: A diagram of the different parts of a heartbeat that are searched for during an ECG test [2].*  
 
   This signal of the heartbeat, in the form of the "PQRST" complex as seen with Figure 1, is what needs to be detected in order to find important information about a patient's heart. Things like poor blood flow, arrhythmias, heart attacks, and thickened heart walls, can be picked up, seen, and diagnosed accurately with this type of circuit [4].  
 
@@ -62,7 +62,7 @@ count=1;
 
 That packet of 20 individual values from the Arduino is sent to a loop that can't be left without a Serial port disconnection or a manual code end caused by the user. That loop constantly looks for the start of the new incoming packet, packet into a vector that MATLAB can tranversed, enters that vector being evaluated, turns the value into a voltage thanks to the data conversion with a time attached to the value, and finally plotted on a constantly updating graph of voltage vs. time. A circular buffer is used so that a constant stream of voltages can be plotted in an ever-rotating plot that can be seen in Figure 3 below.
 
-![Gif that shows the Circular Plotting](ReportImages/RealTimePlotting.gif)
+![Gif that shows the Circular Plotting](ReportImages/RealTimePlotting.gif)  
 *Figure 3: A gif that shows how the plotting of data works on MATLAB. The red vertical line acts as the real-time sweep as the signal gets plotted.*  
 
 As can also be seen from Figure 3, there are also magneta dots and red and green stars on the signal as well. These are the marks that are meant to point to the what the R peak of a signal is as well as the right(green) and left(red) of that R peak, as explained below:
@@ -140,7 +140,7 @@ The code from the above snipet is the entireity of the function, and it also has
 Testing the programming for both the Arduino and MATLAB itself is pretty simple: connect the Arduino to PC running the MATLAB script and view the real-time output from the A0 pin.  
 
 
-![Gif that shows the Circular Plotting with Test Signals](ReportImages/TestingArduinoAndMatlab.gif)
+![Gif that shows the Circular Plotting with Test Signals](ReportImages/TestingArduinoAndMatlab.gif)  
 *Figure 4: A gif that shows how the plotting of signals to MATLAB. The gif shows the signals from the A0 pin connected to the GND pin, the 5V pin, and just open to the air.*  
 
 
@@ -162,7 +162,7 @@ While the BPM can be seen in Figure 3, it is shown again ib Figure 6. The BPM ca
 
 ## Results
 
-![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
+![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)  
 *Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times per minute, or around 1Hz.*  
 
 Once the circuit board was connected to the Arduino or MATLAB, and the output from Figure 7 with the same BPM as generated from the heartbeat signal generator, it shows that the system works. Despite the little hiccup of the R location marker where the marker is on the lower S spike instead of the R peak, the count of the BPM and the output of the entire system is correct and show that everything works.  
