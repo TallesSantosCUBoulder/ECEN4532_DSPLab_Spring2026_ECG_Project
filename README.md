@@ -185,8 +185,8 @@ The main issues that were had with the ECG circuit as a whole was the slow speed
 
 [4]&emsp;“Abnormal Electrocardiogram (ECG/EKG) - Doral Health & Wellness NY,” Doral Health & Wellness, Aug. 08, 2025. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/ (accessed Mar. 22, 2026).
 ‌
-5. https://emcrit.org/ibcc/later/#:~:text=persistent%20S%20wave%20in%20V6,-(back%20to%20contents&text=Sometimes%20R%2Dwave%20progression%20is,(especially%20lateral%20wall%20MI).
+[5]&emsp;About EMCrit, “Late or irregular R-wave transition,” EMCrit Project, Aug. 07, 2025. https://emcrit.org/ibcc/later/ (accessed Mar. 23, 2026).
+‌
 
-6. https://ecgwaves.com/ecg-qrs-complex-q-r-s-wave-duration-interval/
-
-7. 
+[6]&emsp;“The QRS complex: ECG features of the Q-wave, R-wave, S-wave & duration,” ECG & ECHO, May 22, 2018. https://ecgwaves.com/ecg-qrs-complex-q-r-s-wave-duration-interval/
+‌
