@@ -22,7 +22,7 @@
 
 ### Hardware
 
-![Diagram of the Circuit the Body Completes](ReportImages/BodyCircuit.png)
+![Diagram of the Circuit the Body Completes](ReportImages/BodyCircuit.png)  
 *Figure 2: A diagram of the circuit that a body completes based on the position of the electrodes. A) represents the circuit on a body while B) shows the connections in the image space. [3]*  
 
 As can be seen in Figure 2, the basic premise of the ECG Circuit itself involves building a voltage divider with the heart in order to pick up the signals ans input it into the circuit.
