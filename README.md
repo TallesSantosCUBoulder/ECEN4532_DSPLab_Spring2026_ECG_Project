@@ -60,7 +60,7 @@ count=1;
 ``` 
 *Code Snipet 1: The first lines from the MATLAB script 'read_serial_Nsamples_buffer.m'. These lines work to format everything from the baud rate being received, the sampling frequency that the signal is being measured at, the size of the data packets that are recieved at once, conversion of the Arduino value from 0 to 5 volts, and other variables needed in the plotting of the data in real-time.* 
 
-That packet of 20 individual values from the Arduino is sent to a loop that can't be left without a Serial port disconnection or a manual code end caused by the user. That loop constantly looks for the start of the new incoming packet, packet into a vector that MATLAB can tranversed, enters that vector being evaluated, turns the value into a voltage thanks to the data conversion with a time attached to the value, and finally plotted on a constantly updating graph of voltage vs. time. A circular buffer is used so that a constant stream of voltages can be plotted in an ever-rotating plot that can be seen in Figure ? below.
+That packet of 20 individual values from the Arduino is sent to a loop that can't be left without a Serial port disconnection or a manual code end caused by the user. That loop constantly looks for the start of the new incoming packet, packet into a vector that MATLAB can tranversed, enters that vector being evaluated, turns the value into a voltage thanks to the data conversion with a time attached to the value, and finally plotted on a constantly updating graph of voltage vs. time. A circular buffer is used so that a constant stream of voltages can be plotted in an ever-rotating plot that can be seen in Figure 3 below.
 
 ![Gif that shows the Circular Plotting](ReportImages/RealTimePlotting.gif)
 *Figure 3: A gif that shows how the plotting of data works on MATLAB. The red vertical line acts as the real-time sweep as the signal gets plotted.*  
@@ -164,21 +164,14 @@ While the BPM can be seen in Figure 3, it is shown again ib Figure 6. The BPM ca
 ![BPM of the Generated Heartbeat Signal from a Heartbeat Generator](ReportImages/RealTimeMatlabHeartbeatPlot.png)
 *Figure 7: The image from the MATLAB srcipt running that shows the BPM of the generated heartbeat signal, which is around 60 times per minute, or around 1Hz.*  
 
-Once the circuit board was connected to the Arduino or MATLAB, and the output from Figure 7 with the...  
+Once the circuit board was connected to the Arduino or MATLAB, and the output from Figure 7 with the same BPM as generated from the heartbeat signal generator, it shows that the system works. Despite the little hiccup of the R location marker where the marker is on the lower S spike instead of the R peak, the count of the BPM and the output of the entire system is correct and show that everything works.  
 
 
 ## Conclusion and Future Work
 
-With the overall results of the completed hardware and software integration showing that the...  
+With the overall results of the completed hardware and software integration showing that the accurate heartbeat shape normalized in between 0 and 5V and counting same BPM value that the heartbeat device, it is safe to say that the overall circuit works. Every apsect does what it is supposed to do, despite some flaws.  
 
-
-The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system, the fact that occasionally the MATLAB script not running with an "Index exceeds array bounds" error, as shown in Figure 8, and the .  
-
-![The Error that will occasionally occur and make the MATLAB script not work](ReportImages/MatlabOccasionalError.png)  
-*Figure 8: The "Index exceeds array bounds" error that occasionally occurs when trying to run the MATLAB script.*  
-
-
-The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The error, on the other hand
+The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that the MATLAB script counts the bottom part of the QRS complex instead of the R peak like it should. The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The R peak detection, on the other hand, is due to the fact that the heartbeat signal generator isn't completely accurate to an actual heartbeat. An actual heartbeat looks more like the image from Figure 1, with the S peak in the QRS complex being nowhere as large as what the heartbeat generator outputs in normal heartbeats. While most ECG images do look like Figure 1, there are some situations, either with abnormal heartbeats or with the placements of the electrodes [5, 6], a large S peak can occur and have a larger value than the R peak. Due to this oversight in assumption of the QRS complex that has then bleed into the Code Snippet 2 with the 'identityQRSComplex' function, a fix that needs to not only look into the value of the peak but into the positive value while having better checks with the Q and S peaks to better mark on the plot of the signal would be the next step to take. But other than that, this combination of hardware signal detection, filtering, and normalization to software real-time QRS complex detection and BPM calculation works overall.
 
 ## References
 [1]&emsp;Mayo Clinic, “Electrocardiogram (ECG or EKG),” Mayoclinic.org, Apr. 02, 2024. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
@@ -192,3 +185,8 @@ The slow "real-time" data collection issue can be solved with a faster, more pow
 
 [4]&emsp;“Abnormal Electrocardiogram (ECG/EKG) - Doral Health & Wellness NY,” Doral Health & Wellness, Aug. 08, 2025. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/ (accessed Mar. 22, 2026).
 ‌
+5. https://emcrit.org/ibcc/later/#:~:text=persistent%20S%20wave%20in%20V6,-(back%20to%20contents&text=Sometimes%20R%2Dwave%20progression%20is,(especially%20lateral%20wall%20MI).
+
+6. https://ecgwaves.com/ecg-qrs-complex-q-r-s-wave-duration-interval/
+
+7. 

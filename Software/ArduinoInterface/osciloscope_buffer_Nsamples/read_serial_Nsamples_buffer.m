@@ -34,80 +34,73 @@ count=1;
 figure
 while(true)
 
-    % find the first '\n' to know where to start to read
-    while(vecSamples~=10)
-        vecSamples = read( fp , 1 , "uint8" ) ;
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % SAFE SERIAL READ (FIXED)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % vec_samples_aux = zeros(sizeBufferArduino,1);
+
+    for i = 1:sizeBufferArduino
+        line = readline(fp);           % guarantees full line ending in \n
+        val = str2double(line);        % safer than str2num
+
+        if isnan(val)
+            continue; % skip bad data instead of crashing
+        end
+
+        vec_samples_aux(i) = val;
+    end
+    
+    % validation guard (prevents crash)
+    if isempty(vec_samples_aux) || all(vec_samples_aux == 0)
+        continue;
     end
 
-    % read serial port
-    vecSamples = read( fp , 5*sizeBufferArduino , "uint8" ); % try to read 5, because each number is "XXXX\n"
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % circular buffer and convert to volts
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    nValid = min(length(vec_samples_aux), sizeBufferArduino);
 
-    % take the serial port data and convert to a vector
-    vec_samples_aux = str2num(char(vecSamples));
-    vecSamples = vecSamples(end); % if it is \n, it keeps reading, if not will go to the first while of this loop
-
-
-    % cirular buffer and convert to volts
-    for i=1:sizeBufferArduino
-        CircularBuffer(count) = vec_samples_aux(i)*bits2volts ;
-        count=mod(count,nSamplesBuffer)+1;
-        % idx = mod(count-1, numel(CircularBuffer)) + 1;
-        % CircularBuffer(idx) = vec_samples_aux(i)*bits2volts;
-
+    for i = 1:nValid
+        CircularBuffer(count) = vec_samples_aux(i) * bits2volts;
+        count = mod(count, nSamplesBuffer) + 1;
     end
-
-    % toc
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % your function
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Calling the Function
     [R_loc, left, right, bpm] = identifyQRSComplex(CircularBuffer, fs);
-
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % plot osciloscope
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
     t = linspace(0,1/fs*nSamplesBuffer,nSamplesBuffer);
-    freq_axis = linspace(0,fs,nSamplesBuffer);
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % first plot (time domain)
-
-    % plot circular buffer in the time domain
     plot(t,CircularBuffer,'b')
+    hold on;
 
-    hold on ;
-
-    % plot vertical line
+    % vertical cursor
     count_aux = mod(count-2,nSamplesBuffer)+1;
     plot(t(count_aux),CircularBuffer(count_aux),'r.')
     plot([t(count_aux) t(count_aux)],[-0.2 5.5],'r');
 
-    % Plotting the left, right, and QRS peak of the signal
+    % QRS markers
     plot(t(R_loc),CircularBuffer(R_loc),'m*','LineWidth',5)
     plot(t(left), CircularBuffer(left), 'r*')
     plot(t(right), CircularBuffer(right), 'g*')
 
-    % Handling the Size and specifics of the real time plotting
+    % formatting
     xlim([0 t_Buffer]);
     ylim([-0.2 5.5])
     xlabel('t(secs)');
     ylabel('V(volts)')
     hold off;
-    title('osciloscope; BPM: ', num2str(bpm));
+
+    title(['osciloscope; BPM: ', num2str(bpm)]);
 
     drawnow
 
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 end
 
-
 fclose(fp);
-
-
 
 
