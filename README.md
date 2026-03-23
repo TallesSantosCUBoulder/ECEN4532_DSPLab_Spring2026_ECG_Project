@@ -157,6 +157,7 @@ Instead of just having a DC signal and moving it from 5V to GND very fast by han
 
 While the BPM can be seen in Figure 3, it is shown again ib Figure 6. The BPM can be seen as 90, or 1.5Hz, which lines up with how the function generator was set up to output. This shows that the BPM calculation, and the software side of the ECG circuit as a whole, is working as intended.
 
+
 ### Connecting the Hardware and Software
 
 ## Results
@@ -173,6 +174,7 @@ With the overall results of the completed hardware and software integration show
 
 The main issues that were had with the ECG circuit as a whole was the slow speed of the "real-time" system and the fact that the MATLAB script counts the bottom part of the QRS complex instead of the R peak like it should. The slow "real-time" data collection issue can be solved with a faster, more powerful computer. The R peak detection, on the other hand, is due to the fact that the heartbeat signal generator isn't completely accurate to an actual heartbeat. An actual heartbeat looks more like the image from Figure 1, with the S peak in the QRS complex being nowhere as large as what the heartbeat generator outputs in normal heartbeats. While most ECG images do look like Figure 1, there are some situations, either with abnormal heartbeats or with the placements of the electrodes [5, 6], a large S peak can occur and have a larger value than the R peak. Due to this oversight in assumption of the QRS complex that has then bleed into the Code Snipet 2 with the 'identityQRSComplex' function, a fix that needs to not only look into the value of the peak but into the positive value while having better checks with the Q and S peaks to better mark on the plot of the signal would be the next step to take. But other than that, this combination of hardware signal detection, filtering, and normalization to software real-time QRS complex detection and BPM calculation works overall.
 
+
 ## References
 [1]&emsp;Mayo Clinic, “Electrocardiogram (ECG or EKG),” Mayoclinic.org, Apr. 02, 2024. https://www.mayoclinic.org/tests-procedures/ekg/about/pac-20384983
 ‌
@@ -185,6 +187,7 @@ The main issues that were had with the ECG circuit as a whole was the slow speed
 
 [4]&emsp;“Abnormal Electrocardiogram (ECG/EKG) - Doral Health & Wellness NY,” Doral Health & Wellness, Aug. 08, 2025. https://doralhw.org/condition/abnormal-electrocardiogram-ecg-ekg/ (accessed Mar. 22, 2026).
 ‌
+
 [5]&emsp;About EMCrit, “Late or irregular R-wave transition,” EMCrit Project, Aug. 07, 2025. https://emcrit.org/ibcc/later/ (accessed Mar. 23, 2026).
 ‌
 
