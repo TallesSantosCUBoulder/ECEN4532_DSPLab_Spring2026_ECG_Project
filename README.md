@@ -27,6 +27,7 @@
 
 As can be seen in Figure 2, the basic premise of the ECG Circuit itself involves building a voltage divider with the heart in order to pick up the signals ans input it into the circuit.
 
+![Schematic of ECG Circuit](ReportImages/ECGSchematic.png) 
 ### Testing the Hardware
 
 ### Software
