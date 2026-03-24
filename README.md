@@ -27,16 +27,24 @@
 
 As can be seen in Figure 2, the basic premise of the ECG Circuit itself involves building a voltage divider with the heart in order to pick up the signals ans input it into the circuit.
 
+#### Circuit Schematic
+
 To gather the heart rate information from the body leads are attatched to the patient and then connected to an analog circuit to filter and amplify the data coming in from the leads. This circuit is used as a form of preprocessing to alow for a more precise reading from the microcontroller. Below is the schematic of the ECG circuit that was used in its design.
 ![Schematic of ECG Circuit](ReportImages/ECGSchematic.png) 
 
-#### Circuit Schematic
 The Schematic of the circuit is broken into parts each playing a role in the amplification, filtering, or offset of the signal for later interpretation. The first segment of the schematic is an instrumentation amplifier to take the very weak signal from the body and give it gain to allow for filtering. The second step is a passive high pass filter made of a capacitor and resistor. This stage is used to reduce interferance from body roll and breathing, and to remove dc offset from the signal. The next stage is a buffer to isolate previos stages from feedback. The following stage is a 60hz notch filter. This filter has a high attenuation of the 60 hz signal to remove interferance from main powr in the room as it is the biggest source of interferance in the signal. This is then fed into a buffer to once again isolate the filter from future stages. The subsiquent stage is an active low pass filter to further attenuate high frequencies such as 60hz and to remove any noise from frequencies not produced by heartrate. The final stage is an inverting amplifier to further amplify the signal for processing, and it is combined with a circuit to add offset so the microcontroller can read the signal.
 
+#### PCB Design
 
+To buid the circuit in hardware the schematic was then used to design the PCB to physically implement the circuit. Below is the PCB schematic that was used in this project.
 ![Schematic of PCB ECG Circuit](ReportImages/ECGPCB.png) 
+
+There was an itterative process used in designing the layout for the PCB. The software used for this was KICAD, and in this software it has the ability to select pieces from the schematic to then place on the PCB. So the circuit was designed piece by piece for each module. The circuit looped arround starting at the bottom left corner with the inputs and moving on to the top left for the output. each of the op amps used were dual op amps and therefor the sequential modules were able to make use of the two amplifiers vutting down on the size of the circuit. The difficult part of the design was making sure that all power inputs and ground planes were connected propperly. Through trial and error the above circuit was compiled.
+
+The hardware was not able to be completed at the time of this paper, but the components have been selected and they will be soldered to the pcb to complete the analog circuit.
 ### Testing the Hardware
 
+At the time of this paper the circuit was not able to be made due to some issues with the milling machine, but there are further steps for future use when the machine is up and running. The future plans for testing is to print out the PCB, solder on the components, and connect the completed circuit to the simulator and then to one of us to test the output. The output of the circuit will be observed from the ocilloscope and a passed test will be a test that shows a similar result to the already working breadboard circuit. The report will be updated with this information when the tests have been run.
 ### Software
 For the software side of things, an Arduino Uno R3 was used to take that normalized heartbeat signal, or a simple test signal generated from a function generator, that ranges from 0 to 5V and transmit the data to MATLAB via packets. The packets act like individual bundles of data that are all sent to the host computer running MATLAB in order instead of in a constant real time stream that would take more processing power and lead to potential data errors.  
 
